@@ -1,4 +1,4 @@
-# 🧠 Embedded Machine Learning Projects – Fall B 2025  
+# Embedded Machine Learning Projects – Fall B 2025  
 **Author:** Anushka Satav  
 **Course:** BMI/CEN 598 – Embedded Machine Learning  
 **University:** Arizona State University  
@@ -6,15 +6,16 @@
 
 ---
 
-## 📘 Overview  
+## Overview  
 This repository contains all project submissions and experiments completed as part of the **BMI/CEN 598 – Embedded Machine Learning** course at **Arizona State University (Fall B 2025)**.  
 Each project explores a unique embedded systems concept combining **microcontroller programming**, **state machine design**, **sensing**, and **intelligent decision-making** on low-power devices such as the **Arduino Nano 33 BLE Sense**.
 
 ---
 
-## 🧩 Project List  
+## Project List  
 
-### 🔹 [Project 1: Embedded State Machine using Arduino Nano 33 BLE Sense](./Project1/)
+#### 🔹 [Project 1: Embedded State Machine using Arduino Nano 33 BLE Sense](./Project1/)
+
 **Description:**  
 A finite state machine was implemented using the onboard RGB LED of the Arduino Nano 33 BLE Sense.  
 The system reacts to serial input (`C` key) and internal timers to cycle through LED color states representing **DARK → RED → BLUE → GREEN → DARK**.
@@ -30,18 +31,16 @@ The system reacts to serial input (`C` key) and internal timers to cycle through
 
 **Folder:** [`Project1/`](./Project1/)
 
----
 
-## 🧰 Tools & Technologies  
+## Tools & Technologies  
 - **Hardware:** Arduino Nano 33 BLE Sense (nRF52840, ARM Cortex-M4F)  
 - **Software:** Arduino IDE 2.x  
 - **Programming Language:** C++  
 - **Testing Environment:** Serial Monitor and Onboard RGB LED  
 - **Version Control:** Git & GitHub  
 
----
 
-## 🧠 Learning Outcomes  
+## Learning Outcomes  
 Through these projects, I gained hands-on experience in:  
 - Modeling reactive embedded systems using state machines.  
 - Managing timing and synchronization with `millis()`.  
@@ -51,7 +50,7 @@ Through these projects, I gained hands-on experience in:
 
 ---
 
-## 🪄 Future Additions  
+## Future Additions  
 Upcoming projects will explore:  
 - Sensor integration and fusion on embedded platforms.  
 - Low-power machine learning inference using TinyML frameworks.  
@@ -59,8 +58,8 @@ Upcoming projects will explore:
 
 ---
 
-### 🏫 About the Author  
-**👩‍💻 Anushka Satav**  
+### About the Author  
+**Anushka Satav**  
 - M.S. in Robotics and Autonomous Systems (AI) @ Arizona State University  
 - Interested in **robot software design**, **autonomous control**, and **embedded AI systems**.  
 - Skilled in **C++, Python, ROS2, and data-driven robotics**.  
