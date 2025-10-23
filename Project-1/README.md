@@ -109,7 +109,7 @@ This hybrid reactive design — blending **event-driven** and **time-triggered**
 
 ## 8. Solution Demonstration Links
  
-[![Watch the video](https://img.youtube.com/vi/hP2Bn6jy1pI/0.jpg)](https://youtu.be/hP2Bn6jy1pI)
+[![Watch the video](https://img.youtube.com/vi/TrUIcJQiAgE/0.jpg)](https://youtu.be/TrUIcJQiAgE)
 
 
 
