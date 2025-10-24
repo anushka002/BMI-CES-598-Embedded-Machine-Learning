@@ -127,9 +127,8 @@ This hybrid reactive design — blending **event-driven** and **time-triggered**
 ## 10. References and Helpful Resources
 
 1. [Arduino Nano 33 BLE Sense Documentation](https://docs.arduino.cc/hardware/nano-33-ble-sense)  
-2. [RGB LED Pin Mapping Discussion](https://forum.arduino.cc/t/rgb-led-on-nano-33-ble/671327)  
-3. FSM Concepts in Embedded Control Systems – *IEEE Access, Vol. 9 (2022), pp. 10045–10058*  
-4. [Arduino Timing Function Reference](https://www.arduino.cc/en/Tutorial/BuiltInExamples/BlinkWithoutDelay)  
+2. [RGB LED Pin Mapping Discussion](https://support.arduino.cc/hc/en-us/articles/360016724140-Control-the-RGB-LED-on-Nano-33-BLE-boards)  
+3. [RGB led Interfacing with Arduino Uno](https://projecthub.arduino.cc/semsemharaz/interfacing-rgb-led-with-arduino-b59902)
 
 ---
 
