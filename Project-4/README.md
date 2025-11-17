@@ -184,6 +184,17 @@ Each training example consists of 3D feature vectors:
 
 [![Watch the demo](https://img.youtube.com/vi/NzS9q4fE_0s/maxresdefault.jpg)](https://youtu.be/NzS9q4fE_0s)
 
+
+**Confusion Matrix – 1D CNN (Selected Model for Deployment):**
+
+<img width="538" height="498" alt="image" src="https://github.com/user-attachments/assets/13806f1e-9de8-4039-a85d-07a2069d9cef" />
+
+
+**Final Test Accuracy Comparison – 1D CNN**
+
+<img width="979" height="324" alt="image" src="https://github.com/user-attachments/assets/3dea18de-99e7-4178-b54f-024074c2d239" />
+
+
 ---
 
 ## E. Discussion & Conclusion
