@@ -181,7 +181,8 @@ Each training example consists of 3D feature vectors:
 | '3'     | MAG    | Posture based on MAG |
 
 **Demonstration Video:**  
-[Insert YouTube Video Link Here]  
+
+[![Watch the demo](https://img.youtube.com/vi/NzS9q4fE_0s/maxresdefault.jpg)](https://youtu.be/NzS9q4fE_0s)
 
 ---
 
