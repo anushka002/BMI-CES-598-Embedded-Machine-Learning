@@ -308,7 +308,7 @@ micro_features_micro_model_settings.h/cpp
 ### Appendix C: References
 1.	Arduino Nano 33 BLE Sense Rev2 Documentation: https://docs.arduino.cc/hardware/nano-33-ble-sense/ (Used for IMU initialization and library reference.)
 2.	TensorFlow Lite Micro:  micro_speech Example
-https://github.com/tensorflow/tflite-micro/tree/main/tensorflow/lite/micro/examples/micro_speech
+https://github.com/tensorflow/tflite-micro/tree/main/tensorflow/lite/micro/examples/micro_speech , https://github.com/tensorflow/tflite-micro/blob/main/tensorflow/lite/micro/examples/micro_speech/train/train_micro_speech_model.ipynb
 3.	Google Speech Commands Dataset
 https://www.tensorflow.org/datasets/catalog/speech_commands
 4.	TensorFlow. “Keras API Documentation.” https://www.tensorflow.org/api_docs/python/tf/keras
