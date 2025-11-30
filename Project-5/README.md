@@ -196,3 +196,131 @@ This project successfully:
 **High test accuracy does not guarantee real-world performance.**  
 Embedded ML requires tuning the entire end-to-end system — preprocessing, quantization, smoothing, thresholds, and hardware behavior — to achieve reliable real-time results.
 
+
+## Appendices
+### Appendix A - File inventory (key files)
+
+Python Scripts & Colab Notebooks
+
+ANUSHKA-BMI598-PROJECT05.ipynb
+The primary Google Colab notebook containing the full offline TinyML pipeline:
+•	Loads the combined 7-class dataset
+•	Performs dataset preprocessing and augmentation
+•	Defines and trains the tiny_conv CNN for 12,000 steps
+•	Logs accuracy and loss for TensorBoard
+•	Performs INT8 post-training quantization
+•	Generates the deployable C-array model file for Arduino
+•	Exports both float32 and int8 .tflite models
+
+Arduino Code & Model Artifacts
+
+anushka-speech-recognition.ino
+The main Arduino sketch used for real-time inference.
+Modifications include:
+•	Increasing kTensorArenaSize to 90 * 1024 bytes
+•	Setting the tuned detection threshold using:
+static RecognizeCommands static_recognizer(1000, 130, 1000, 3)
+•	Implementing continuous audio streaming + inference loop
+•	Integrating TFLM runtime and prediction smoothing
+
+micro_features_model.h / micro_features_model.cc
+•	Stores the compiled TFLite Micro model as a C-array
+•	micro_features_model.cc replaced with the exported
+speech_recognition_final_model.cc from Colab
+•	Model array variable renamed to g_model for TFLM compatibility
+
+micro_features_micro_model_settings.h / micro_features_micro_model_settings.cpp
+Updated to reflect the 7-class taxonomy
+
+arduino_command_responder.cpp / arduino_command_responder.h
+Contains the LED response logic. Updated to:
+•	Map each of the 7 classes to a specific RGB LED color
+•	Handle silence and unknown cases
+•	Allow quick visual debugging during real-time testing
+
+recognize_commands.cpp
+Modified to:
+•	Enable detailed debugging via #define DEBUG_MICRO_SPEECH
+•	Print all 7 class scores on one atomic line to avoid serial interference
+•	Support tuned detection threshold and smoothing windows
+
+
+Dataset and Results Files
+
+combined_dataset/
+Contains all 3,970 .wav files, organized in 7 subfolders:
+•	never/
+•	none/
+•	all/
+•	must/
+•	only/
+•	unknown/
+Includes custom recordings + ASU EML Audio Dataset entries.
+
+models/model.tflite
+Final int8 quantized TFLite model (~29 KB).
+models/float_model.tflite
+Original float32 TFLite model (~116 KB).
+Used for size/performance comparison.
+
+logs/
+TensorBoard training logs containing:
+•	Training accuracy curve
+•	Validation accuracy curve
+•	Training/testing cross-entropy loss curves
+
+
+### Appendix B: Run The Pipeline
+
+The full workflow runs in three phases:
+
+1. Data Collection & Preparation: in Google Colab
+•	Upload all .wav files to your combined_dataset/ directory
+•	Ensure consistent naming + folder structure
+•	Convert any .ogg custom recordings into .wav
+•	Verify 7-class directory layout for training
+
+2. Train & Convert Model: ANUSHKA-BMI598-PROJECT05.ipynb
+Running the notebook performs:
+•	Dataset loading & preprocessing
+•	MFCC/spectrogram feature generation
+•	Training tiny_conv for 15,000 steps
+•	Saving TensorBoard logs
+•	Running representative_dataset_gen for quantization
+•	Exporting the final speech_recognition_final_model.cc C-array
+This file is then downloaded to your local machine for Arduino deployment.
+
+3. Deploy & Test Model: on Arduino Nano 33 BLE Sense
+Steps:
+1.	Open anushka-speech-recognition.ino in Arduino IDE
+2.	Replace micro_features_model.cc with
+speech_recognition_final_model.cc content
+3.	Update class labels in
+micro_features_micro_model_settings.h/cpp
+4.	Update LED logic in arduino_command_responder.cpp
+5.	Set: kTensorArenaSize = 90 * 1024.
+6.	static RecognizeCommands static_recognizer(1000, 130, 1000, 3);
+7.	Upload to the board
+8.	Test by speaking each keyword and observing:
+•	RGB LED colors
+•	Serial Monitor scores for all 7 classes
+
+### Appendix C: References
+1.	Arduino Nano 33 BLE Sense Rev2 Documentation: https://docs.arduino.cc/hardware/nano-33-ble-sense/ (Used for IMU initialization and library reference.)
+2.	TensorFlow Lite Micro:  micro_speech Example
+https://github.com/tensorflow/tflite-micro/tree/main/tensorflow/lite/micro/examples/micro_speech
+3.	Google Speech Commands Dataset
+https://www.tensorflow.org/datasets/catalog/speech_commands
+4.	TensorFlow. “Keras API Documentation.” https://www.tensorflow.org/api_docs/python/tf/keras
+5.	ASU EML Audio Dataset (Provided in course materials)
+6.	Open Speech Recording Tool: https://github.com/petewarden/open-speech-recording
+7.	Course Material: BMI/CEN 598: Embedded Machine Learning, Arizona State University (Fall B 2025). 
+8.	Personal Data Collection & Analysis: All thresholds and algorithm decisions were derived from the measured IMU data collected during this project.
+
+Appendix D: Use of AI Tools
+The development process utilized large language models to enhance efficiency and troubleshoot complex technical challenges. ChatGPT and Gemini Pro models were specifically employed for:
+•	Debugging and Error Resolution: Identifying and correcting errors in data processing scripts and Arduino inference code.
+•	Code Modification and Generation: Assisting with the structure and syntax of specialized functions, such as serial communication protocols and TFLM C array handling.
+
+
+
