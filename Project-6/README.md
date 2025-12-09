@@ -78,6 +78,16 @@ Phase 4:
 - ImageNet normalization  
 - Same augmentations  
 
+---
+Food11 Dataset after Pre-processing
+
+<img width="616" height="624" alt="image" src="https://github.com/user-attachments/assets/2d8420f2-b76c-44bf-9f97-ed86a1544107" />
+
+
+[Link To Dataset](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset/data)
+
+---
+
 ## Algorithms and Model Architectures
 
 ### Phase 1: Basic CNN
