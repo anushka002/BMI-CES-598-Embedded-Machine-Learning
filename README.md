@@ -59,47 +59,125 @@ The real-time Arduino system communicates detected posture via **LED blink patte
 
 **Folder:** [`Project2/`](./Project2/)
 
+
+---
+
+### 🔹 [Project 3: Design, Data Collection, and Neural Network-Based Classification of Human Postures Using IMU Signals](./Project3/)
+
+**Description:**  
+An end-to-end supervised machine learning pipeline for human posture classification using IMU data.  
+The project includes data collection, dataset construction, feature engineering, neural network training, and evaluation.
+
+**Features:**  
+- Controlled posture-specific data collection  
+- Feature extraction from IMU signals  
+- Neural network training with multiple activation functions  
+- Accuracy and robustness evaluation  
+- Emphasis on explainable ML for embedded systems  
+
+**Folder:** [`Project3/`](./Project3/)
+
+---
+
+### 🔹 [Project 4: Real-Time, Sensor-Agnostic Posture Classification on the Arduino Nano 33 BLE Sense Using IMU Windowing, Normalization, and TensorFlow Lite Micro](./Project4/)
+
+**Description:**  
+A real-time embedded posture classification system capable of classifying **five postures**  
+(supine, prone, side-lying, sitting, unknown) using **any three-axis IMU sensor**.
+
+The system is sensor-agnostic and supports accelerometer, gyroscope, or magnetometer inputs, with real-time inference deployed using **TensorFlow Lite Micro**.
+
+**Features:**  
+- Multimodal IMU data collection  
+- Windowing and normalization for real-time inference  
+- Lightweight neural network optimized for embedded deployment  
+- BLE-based live streaming of predictions  
+- >90% test accuracy across sensor combinations  
+
+**Demo Video:**  
+[![Watch the demo](https://img.youtube.com/vi/NzS9q4fE_0s/maxresdefault.jpg)](https://youtu.be/NzS9q4fE_0s)
+
+
+**Folder:** [`Project4/`](./Project4/)
+
+---
+
+### 🔹 [Project 5: Real-Time Embedded Keyword Spotting of Absolutist Language on Arduino Nano 33 BLE Sense](./Project5/)
+
+**Description:**  
+A full **TinyML audio pipeline** that performs real-time keyword spotting directly on a microcontroller.  
+The system detects five custom *absolutist-language* keywords—**“never”, “none”, “all”, “must”, “only”**—and distinguishes them from silence and unknown speech.
+
+The model runs continuously on-device and provides immediate visual feedback using the onboard RGB LED.
+
+**Features:**  
+- On-device audio acquisition at 16 kHz  
+- Spectrogram / MFCC-based feature extraction  
+- CNN (tiny_conv) trained and deployed with TensorFlow Lite Micro  
+- INT8 post-training quantization (~74% model size reduction)  
+- Real-time inference with application-level threshold tuning  
+- ~95% test accuracy with stable real-time performance  
+
+**Demo Video:**  
+[![YouTube Demo Video](https://img.youtube.com/vi/gCpXxAnSdtk/hqdefault.jpg)](https://youtu.be/gCpXxAnSdtk)
+
+
+**Folder:** [`Project5/`](./Project5/)
+
+---
+
+### 🔹 [Project 6: Food-11 Image Classification Using Convolutional Neural Networks and Transfer Learning](./Project6/)
+
+**Description:**  
+An exploration of deep learning techniques for image classification using the **Food-11 dataset**.  
+The project compares baseline CNN models with **ShuffleNet-based transfer learning** to improve generalization and reduce overfitting.
+
+**Features:**  
+- CNN-based image classification  
+- Transfer learning with ShuffleNet  
+- Regularization and optimization techniques  
+- Final test accuracy: **80.31%** (exceeding course benchmark)  
+
+**Folder:** [`Project6/`](./Project6/)
+
 ---
 
 ## Tools & Technologies  
+
 - **Hardware:** Arduino Nano 33 BLE Sense Rev2 (nRF52840 ARM Cortex-M4F)  
-- **Software:** Arduino IDE 2.x, Python  
+- **ML Frameworks:** TensorFlow, TensorFlow Lite Micro  
+- **Software:** Arduino IDE 2.x, Python, Google Colab  
 - **Languages:** C++, Python  
-- **Testing Tools:** Serial Monitor, IMU accelerometer, Onboard LED  
+- **Sensors:** IMU, Microphone  
 - **Version Control:** Git & GitHub  
 
 ---
 
 ## Learning Outcomes  
-Through these projects, I developed strong practical skills in:  
-- Designing reactive embedded architectures (FSMs)  
-- Gathering and annotating sensor data from IMUs  
-- Creating data-driven embedded algorithms  
-- Implementing real-time classification on microcontrollers  
-- Plotting and analyzing sensor signals for threshold selection  
-- Writing modular embedded C++ and Python scripts  
-- Validating designs through experiments and demonstration videos  
+
+Through these projects, I developed hands-on experience in:
+
+- Embedded systems design and finite state machines  
+- Sensor data acquisition and annotation  
+- Feature engineering for time-series and audio data  
+- Neural network training and evaluation  
+- Model optimization and quantization for embedded devices  
+- Real-time inference on microcontrollers  
+- System-level debugging and performance tuning  
 
 ---
 
-## Future Additions  
-Upcoming projects may include:  
-- Sensor fusion (IMU + vision + audio)  
-- TinyML inference using TensorFlow Lite Micro  
-- Gesture recognition on embedded hardware  
-- Multi-modal embedded perception pipelines  
+## About the Author  
 
----
-
-### About the Author  
 **Anushka Satav**  
-- M.S. in Robotics & Autonomous Systems (AI) @ Arizona State University  
-- Interests: Robot intelligence, embedded AI, autonomous navigation, perception systems  
-- Skills: **C++, Python, ROS2, Sensors, Control, Embedded ML**  
+- M.S. in Robotics & Autonomous Systems (AI), Arizona State University  
+- Interests: Embedded AI, TinyML, robot intelligence, perception systems  
+- Skills: **C++, Python, ROS2, Sensors, Control, Embedded Machine Learning**
 
-📫 *Connect with me:*  
+📫 Connect with me:  
 [LinkedIn](https://www.linkedin.com/in/anushka-satav/) | [GitHub](https://github.com/anushkasatav)
 
 ---
 
-⭐ *If you found the projects helpful or interesting, please consider starring the repository!*
+⭐ *If you found these projects helpful or interesting, please consider starring the repository!*
+
